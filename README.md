@@ -44,16 +44,44 @@ A0 = Y7 + Y5 + Y3 + Y1 <br>
 
 
 ## Program:
+### Decoder
+module ex8a(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c ;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0=((~a)&(~b)&(~c));
+assign d1=((~a)&(~b)&c);
+assign d2=((~a)&b&(~c));
+assign d3=((~a)&b&c);
+assign d4=(a&(~b)&(~c));
+assign d5=(a&(~b)&(c));
+assign d6=(a&b&(~c));
+assign d7=(a&b&c);
+endmodule 
+### Encoder
 
-
+module ex8b(y0,y1,y2,y3,y4,y5,y6,y7,a0,a1,a2);
+input y0,y1,y2,y3,y4,y5,y6,y7;
+output a0,a1,a2;
+assign a0=(y7|y5|y3|y1);
+assign a1=(y7|y6|y3|y2);
+assign a2=(y7|y6|y5|y4);
+endmodule
 ## RTL Schematic:
 
+### Decoder
+![244646734-de46ce0e-be89-4e3e-873d-06d82d454daf](https://github.com/NaveenSivamalai/encoder-decoder/assets/123792574/6d832625-68cb-4ead-a292-dd21560da350)
 
-
+### Encoder
+![244645866-4adaf987-3aef-4f8c-ade7-99e312399927](https://github.com/NaveenSivamalai/encoder-decoder/assets/123792574/60fca962-44cd-4a2f-a775-84541ac298ef)
 
 ## Timing Diagram:
 
 
+### Decoder
+![244646288-0a43ed50-9b99-451d-84bf-b6e872d7abab](https://github.com/NaveenSivamalai/encoder-decoder/assets/123792574/61ec96e3-6159-4a79-931a-66ff6f4d5244)
+
+### Encoder
+![244646006-ebc8b351-ca81-4ad5-9dd5-0d18a2a6940d](https://github.com/NaveenSivamalai/encoder-decoder/assets/123792574/8895db27-3034-4e15-b9e5-05a1bf872f94)
 
 ## Result:
 Thus the decoder and encoder circuits are designed and implemented and the truth tables are verified.
